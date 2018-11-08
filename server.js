@@ -22,15 +22,12 @@ app.get("/", function (req, res) {
 // your first API endpoint... 
 app.get("/api/whoami", function (req, res) {
   
-  
-  
    let ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress;
-    ip = ip.split(',')[0];
-    // ip = ip.split(':').slice(-1); //in case the ip returned in a format: "::ffff:146.xxx.xxx.xxx"
-  
+        ip = ip.split(',')[0];
+
   let language= req.headers["accept-language"];
   let software=req.headers["user-agent"];
     
